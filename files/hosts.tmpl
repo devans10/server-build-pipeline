@@ -1,0 +1,6 @@
+[servers]
+%{ for vm_set in vms ~}
+%{ for vm in vm_set ~}
+${vm}.${domain}
+%{ endfor ~}
+%{ endfor ~}

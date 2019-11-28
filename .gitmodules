@@ -1,0 +1,3 @@
+[submodule "modules/virtual-machine"]
+	path = modules/virtual-machine
+	url = http://gitlab.dqe.com/linuxteam/terraform-vsphere-virtual-machine.git

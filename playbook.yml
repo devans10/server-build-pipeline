@@ -1,0 +1,30 @@
+---
+- name: demo-server-build playbook
+  hosts: all
+  become: true
+  become_method: sudo
+  become_user: root
+  tasks:
+    - name: Create /data directory
+      file:
+        path: /data
+        state: directory
+        owner: root
+        group: root
+        mode: 0700
+    - name: Add devans
+      user:
+        name: devans
+        state: present
+    - name: Add oracle
+      user:
+        name: oracle
+        state: present
+    - name: Install oscap
+      yum:
+        name: openscap-scanner
+        state: present
+    - name: Install wget
+      yum:
+        name: wget
+        state: present
